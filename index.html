@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
 <style>
 :root {
   color-scheme: dark;
@@ -441,19 +442,64 @@ section { padding: 100px 5%; }
 .skills-row { display: flex; flex-wrap: wrap; gap: 1rem; }
 .skill-chip {
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: 12px; padding: 0.75rem 1.2rem;
-  display: flex; align-items: center; gap: 0.65rem;
-  font-size: 0.88rem; font-weight: 500; color: var(--text);
+  border-radius: 999px; padding: 0.42rem 0.8rem 0.42rem 0.46rem;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; font-weight: 500; color: var(--text);
   transition: all 0.25s; cursor: default;
+  position: relative; overflow: hidden;
 }
 .skill-chip:hover {
   border-color: var(--accent); background: rgba(110,231,247,0.07);
   transform: translateY(-3px); box-shadow: 0 8px 24px rgba(110,231,247,0.12);
   color: var(--accent);
 }
-.skill-chip .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
-.skill-chip:nth-child(2n) .dot { background: var(--accent2); }
-.skill-chip:nth-child(3n) .dot { background: var(--accent3); }
+.skill-chip::after {
+  content: '';
+  position: absolute;
+  inset: auto -24px -24px auto;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(110,231,247,0.09), transparent 62%);
+  pointer-events: none;
+}
+.skill-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.83rem;
+  line-height: 1;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18);
+}
+.skill-logo i { font-size: 0.74rem; line-height: 1; }
+.logo-python { background: linear-gradient(135deg, #3776ab, #ffd343); }
+.logo-csharp { background: linear-gradient(135deg, #68217a, #9b4de0); }
+.logo-cpp { background: linear-gradient(135deg, #004482, #00a0df); }
+.logo-java { background: linear-gradient(135deg, #ea2d2e, #f29f05); }
+.logo-html { background: linear-gradient(135deg, #e44d26, #f16529); }
+.logo-css { background: linear-gradient(135deg, #264de4, #3b82f6); }
+.logo-bootstrap { background: linear-gradient(135deg, #7952b3, #b17cff); }
+.logo-node { background: linear-gradient(135deg, #3c873a, #68a063); }
+.logo-javascript { background: linear-gradient(135deg, #f7df1e, #f2c94c); color: #1f2937; }
+.logo-mysql { background: linear-gradient(135deg, #00758f, #00a6c7); }
+.logo-powerbi { background: linear-gradient(135deg, #f2c811, #ffd84d); color: #1f2937; }
+.logo-excel { background: linear-gradient(135deg, #217346, #2fb76e); }
+.logo-mongodb { background: linear-gradient(135deg, #47a248, #1f6b35); }
+.logo-dbms { background: linear-gradient(135deg, #475569, #111827); }
+.logo-gemini { background: linear-gradient(135deg, #7c3aed, #22d3ee); }
+.logo-pandas { background: linear-gradient(135deg, #150458, #4f46e5); }
+.logo-numpy { background: linear-gradient(135deg, #4d77cf, #1f3c88); }
+.logo-sklearn { background: linear-gradient(135deg, #f89939, #f59e0b); }
+.logo-seaborn { background: linear-gradient(135deg, #1d4ed8, #06b6d4); }
+.logo-matplotlib { background: linear-gradient(135deg, #f97316, #ef4444); }
+.logo-soft { background: linear-gradient(135deg, #a78bfa, #6ee7f7); color: #0f172a; }
+.skill-logo i { display: block; }
 .skill-chip:nth-child(2n):hover { border-color: var(--accent2); background: rgba(167,139,250,0.07); color: var(--accent2); }
 .skill-chip:nth-child(3n):hover { border-color: var(--accent3); background: rgba(244,114,182,0.07); color: var(--accent3); }
 
@@ -763,50 +809,50 @@ footer span { color: var(--accent); }
       <div class="reveal">
         <div class="skill-category-title">💻 Programming Languages</div>
         <div class="skills-row">
-          <div class="skill-chip"><span class="dot"></span>Python</div>
-          <div class="skill-chip"><span class="dot"></span>C#</div>
-          <div class="skill-chip"><span class="dot"></span>C++</div>
-          <div class="skill-chip"><span class="dot"></span>Java</div>
+          <div class="skill-chip"><span class="skill-logo logo-python"><i class="fa-brands fa-python"></i></span><span>Python</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-csharp"><i class="fa-solid fa-hashtag"></i></span><span>C#</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-cpp"><i class="fa-solid fa-code"></i></span><span>C++</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-java"><i class="fa-brands fa-java"></i></span><span>Java</span></div>
         </div>
       </div>
       <div class="reveal">
         <div class="skill-category-title">🛠️ Frameworks &amp; Web</div>
         <div class="skills-row">
-          <div class="skill-chip"><span class="dot"></span>HTML</div>
-          <div class="skill-chip"><span class="dot"></span>CSS</div>
-          <div class="skill-chip"><span class="dot"></span>Bootstrap</div>
-          <div class="skill-chip"><span class="dot"></span>Node.js</div>
-          <div class="skill-chip"><span class="dot"></span>JavaScript</div>
+          <div class="skill-chip"><span class="skill-logo logo-html"><i class="fa-brands fa-html5"></i></span><span>HTML</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-css"><i class="fa-brands fa-css3-alt"></i></span><span>CSS</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-bootstrap"><i class="fa-brands fa-bootstrap"></i></span><span>Bootstrap</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-node"><i class="fa-brands fa-node-js"></i></span><span>Node.js</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-javascript"><i class="fa-brands fa-js"></i></span><span>JavaScript</span></div>
         </div>
       </div>
       <div class="reveal">
         <div class="skill-category-title">⚙️ Tools &amp; Platforms</div>
         <div class="skills-row">
-          <div class="skill-chip"><span class="dot"></span>MySQL</div>
-          <div class="skill-chip"><span class="dot"></span>Power BI</div>
-          <div class="skill-chip"><span class="dot"></span>Excel</div>
-          <div class="skill-chip"><span class="dot"></span>MongoDB</div>
-          <div class="skill-chip"><span class="dot"></span>DBMS</div>
-          <div class="skill-chip"><span class="dot"></span>Google Gemini API</div>
+          <div class="skill-chip"><span class="skill-logo logo-mysql"><i class="fa-solid fa-database"></i></span><span>MySQL</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-powerbi"><i class="fa-solid fa-chart-column"></i></span><span>Power BI</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-excel"><i class="fa-solid fa-file-excel"></i></span><span>Excel</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-mongodb"><i class="fa-solid fa-leaf"></i></span><span>MongoDB</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-dbms"><i class="fa-solid fa-server"></i></span><span>DBMS</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-gemini"><i class="fa-solid fa-wand-magic-sparkles"></i></span><span>Google Gemini API</span></div>
         </div>
       </div>
       <div class="reveal">
         <div class="skill-category-title">📦 Libraries</div>
         <div class="skills-row">
-          <div class="skill-chip"><span class="dot"></span>Pandas</div>
-          <div class="skill-chip"><span class="dot"></span>NumPy</div>
-          <div class="skill-chip"><span class="dot"></span>Scikit-learn</div>
-          <div class="skill-chip"><span class="dot"></span>Seaborn</div>
-          <div class="skill-chip"><span class="dot"></span>Matplotlib</div>
+          <div class="skill-chip"><span class="skill-logo logo-pandas"><i class="fa-solid fa-chart-line"></i></span><span>Pandas</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-numpy"><i class="fa-solid fa-square-root-variable"></i></span><span>NumPy</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-sklearn"><i class="fa-solid fa-robot"></i></span><span>Scikit-learn</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-seaborn"><i class="fa-solid fa-wave-square"></i></span><span>Seaborn</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-matplotlib"><i class="fa-solid fa-chart-area"></i></span><span>Matplotlib</span></div>
         </div>
       </div>
       <div class="reveal">
         <div class="skill-category-title">🤝 Soft Skills</div>
         <div class="skills-row">
-          <div class="skill-chip"><span class="dot"></span>Problem-Solving</div>
-          <div class="skill-chip"><span class="dot"></span>Team Player</div>
-          <div class="skill-chip"><span class="dot"></span>Time Management</div>
-          <div class="skill-chip"><span class="dot"></span>Adaptability</div>
+          <div class="skill-chip"><span class="skill-logo logo-soft"><i class="fa-solid fa-puzzle-piece"></i></span><span>Problem-Solving</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-soft"><i class="fa-solid fa-people-group"></i></span><span>Team Player</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-soft"><i class="fa-regular fa-clock"></i></span><span>Time Management</span></div>
+          <div class="skill-chip"><span class="skill-logo logo-soft"><i class="fa-solid fa-arrows-spin"></i></span><span>Adaptability</span></div>
         </div>
       </div>
     </div>
